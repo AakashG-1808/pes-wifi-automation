@@ -32,13 +32,26 @@ class login():
 
 
     def accept_name_password(self):
+        if os.path.exists('credentials.txt'):
+            a = open("credentials.txt", "r")
 
-        a = open("credentials.txt", "w")
-        srn=input("Enter SRN : ")
-        pwd=input("Enter Password : ")
-        a.write(srn+"\n")
-        #a.write("\n")
-        a.write(pwd+"\n")
+            if a.readlines()!=[]:
+                print("Credentials are stored :)")
+            else:
+                a = open("credentials.txt", "w")
+                srn = input("Enter SRN : ")
+                pwd = input("Enter Password : ")
+                a.write(srn + "\n")
+                # a.write("\n")
+                a.write(pwd + "\n")
+
+        else:
+            a = open("credentials.txt", "w")
+            srn=input("Enter SRN : ")
+            pwd=input("Enter Password : ")
+            a.write(srn+"\n")
+            #a.write("\n")
+            a.write(pwd+"\n")
         #a.write("\n")
     def change_password(self):
         file = open("credentials.txt", "r")
