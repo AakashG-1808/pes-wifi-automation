@@ -7,7 +7,8 @@ def read():
     credentials_list=a.readlines()
     return credentials_list
 def automator():
-    driver = webdriver.Safari()
+    driver = webdriver.Safari()#change it to chrome or some other browser while running on windows or linux
+    #fix required here
     driver.get("http://192.168.254.1:8090/httpclient.html")
     time.sleep(0.5)
     driver.find_element(By.NAME, "username").send_keys(username)
