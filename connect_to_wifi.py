@@ -6,7 +6,7 @@ def connecting_wifi():
     if platform_system == "Darwin":
         exit_status = os.system("./connect_to_wifi_mac.sh")
         if exit_status==0:
-            print("Script executed successfully!")
+            print("Script executed successfully")
         else:
             print("Issue")
-
+connecting_wifi()
