@@ -3,6 +3,43 @@ credentials.txt
 test_connect.py
 testing.py
 clear_stored_data.py
+# System files
+.DS_Store
+Thumbs.db
+
+# Python cache files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Package directories
+lib/
+Scripts(local)/
+Text Files/
+
+# Virtual environments
+venv/
+env/
+ENV/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
 
 # Python cache files
 __pycache__/
