@@ -104,7 +104,7 @@ def sign_in_to_signout_ver2(page, username, password, browser):
 
         # Wait period with periodic input checks
         print("Waiting... (type 'LO' to logout)")
-        wait_time = 4  # Change to 600 for 10 minutes
+        wait_time = 600  # Change to 600 for 10 minutes lesser for testing purpose
         check_interval = 1  # Check every second
 
         for i in range(wait_time):

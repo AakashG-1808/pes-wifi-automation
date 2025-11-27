@@ -37,13 +37,13 @@ def accept_name_password():
             # a.write("\n")
             a.write(encrypt(pwd) + "\n")
         else:
-            print("The entered passwords do not match.") 
+            print("The entered passwords do not match.")
     return x
-accept_name_password()
+
 def change_password():
     file = open("credentials.txt", "r")
     l=file.readlines()
-    srn=l[0]
+    srn=l[0].strip()
     pwd=decrypt(l[1].strip())
     #c=l[2]-->driver name
     a=input("Enter Your SRN ")

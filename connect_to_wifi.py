@@ -8,7 +8,7 @@ def connecting_wifi():
         if exit_status==0:
             print("Script executed successfully")
         else:
-            print("Issue")
+            print("Issue,try connecting to WI-FI manually")
     if platform_system =="Windows":
         exit_status=os.system("powershell -ExecutionPolicy Bypass -File connect_to_wifi_win.ps1")
 

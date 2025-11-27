@@ -28,7 +28,7 @@ have a live signout button in the code when told logout the code should log out 
 
 
 breakpoint()
-'''
+
 #issues=safari dosent support headless==>in mac force install firefox,in windows
 import time
 from playwright.sync_api import sync_playwright, TimeoutError
@@ -149,7 +149,7 @@ with sync_playwright() as p:
 
 
 
-'''x=read()
+x=read()
 username=x[0].strip()
 password=x[1].strip()
 with sync_playwright() as p:
@@ -188,11 +188,11 @@ with sync_playwright() as p:
 
 
 
-'''
 
 
 
-'''
+
+
 with sync_playwright() as p:
 
 
@@ -222,8 +222,8 @@ with sync_playwright() as p:
     a=input()
     browser.close()
 
-'''
-'''
+
+
 for j in all_text.split():
     if j=="failed":
         print("Login failed ,incorrect SRN/Password")
@@ -237,8 +237,46 @@ if a=="LO":
 else:
     browser.close()
 '''
+import time
+from playwright.sync_api import sync_playwright, TimeoutError
+import enc_dec
+import threading
+user_wants_to_stop = False
 
-    
+def sign_in_to_signout_ver2(page, username, password, browser):
+    #issue-so until u press enter or smth only then the refresh happens or else the refresh gets stuck cuz it never enters code post input block
+    #issue solved using threading -->subprocesses
+    print("Session started. Auto-refreshing every 10 minutes.")
+
+    refresh_count = 0
+    user_wants_to_stop = False
+
+    while not user_wants_to_stop:
+        refresh_count += 1
+        print(f"\n--- Refresh #{refresh_count} at {time.strftime('%H:%M:%S')} ---")
+        time.sleep(10)#change 10 to 600
+        page.click("#loginbutton")
+        page.wait_for_timeout(3000)
+        page.goto("http://192.168.254.1:8090/httpclient.html")
+        page.fill('input[name="username"]', username)
+        page.fill('input[name="password"]', password)
+        page.click("#loginbutton")
+        page.wait_for_timeout(5000)
+        current_content = page.text_content('body')
+        if username in current_content:
+            print("Refresh successful!")
+        else:
+            print("Re-login failed!")
+            break
+    page.click("#loginbutton")#log-out before closing browser
+    page.wait_for_timeout(2000)
+    browser.close()
+threading.Thread(target=sign_in_to_signout_ver2(page, username, password, browser))
+sign_in_to_signout_ver2()
+input("Enter LO to logout")
+user_wants_to_stop = True
+
+
         
 
     
