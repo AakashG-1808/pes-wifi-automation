@@ -45,7 +45,8 @@ elif signout==2:
     print("1-to confirm signout;2-to quit signout")
     decision=int(input())
     if decision==1:
-        b=stdiomask.getpass("Password: ", mask='*')
+        b= stdiomask.getpass("Password: ", mask='*')
+
         x=open("credentials.txt","r")
         content=x.readlines()
         if content[1].strip()==enc_dec.encrypt(b):
