@@ -1,4 +1,4 @@
-# PESU Wi-Fi Auto Login Automation
+<h1 align='center'>📡 PESU Wi-Fi Auto Login Automation 🤖</h1>
 
 ![Python](https://img.shields.io/badge/Python-3.10%2B-darkred.svg)
 ![Playwright](https://img.shields.io/badge/Playwright-Automation-blue.svg)
@@ -16,7 +16,7 @@
 
 ---
 
-## Index
+## 📚 Index
 
 1. **[Overview](#overview)**
 2. **[Installation](#installation)**
@@ -26,7 +26,7 @@
 
 ---
 
-## Overview
+## 🔍 Overview
 
 This Python tool automates the process of connecting to PESU Wi-Fi and logging into the captive portal using Playwright.  
 Your SRN and password are stored locally in **encrypted form**, automatically connect Wi-Fi, log into the portal, and refresh the session every 10 minutes.
@@ -35,10 +35,10 @@ The tool is fully interactive, and credentials never leave your system.
 
 ---
 
-## Installation
+## 🛠️ Installation
 
 Follow the steps below to set up the project on Windows, macOS, or Linux.
-### 1) Windows
+### 1) 🪟 Windows
 
 1. **Clone the repository:**
    ```bash
@@ -65,7 +65,7 @@ Follow the steps below to set up the project on Windows, macOS, or Linux.
    playwright install chromium
    ```
 
-### 2) macOS/Linux
+### 2) 🍎 macOS/Linux
 
 1. **Clone the repository:**
    ```bash
@@ -94,7 +94,7 @@ Follow the steps below to set up the project on Windows, macOS, or Linux.
 
 ---
 
-## Using the auto login tool
+## ⚡ Using the auto login tool
 ### Run the script:
 1. **Windows:**
    ```bash
@@ -107,7 +107,7 @@ Follow the steps below to set up the project on Windows, macOS, or Linux.
 
    ---
 
-## Features
+## ✨ Features
 
 - 🔐 **Encrypted Credential Storage**  
   Stores SRN and password locally using a custom encryption layer to prevent plaintext exposure.
@@ -131,5 +131,5 @@ Follow the steps below to set up the project on Windows, macOS, or Linux.
   Fully compatible with **Windows, macOS, and Linux** with OS-specific connection logic.
 
 ---
-## Conclusion
+## 📝 Conclusion
 With this tool, connecting to PESU Wi-Fi becomes automatic and hassle-free. Once set up, it takes care of login, session refresh, and Wi-Fi handling—letting you focus entirely on your work instead of the captive portal.
