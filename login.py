@@ -1,7 +1,7 @@
 import time
 from playwright.sync_api import sync_playwright, TimeoutError
 import enc_dec
-import threading
+
 def read():#geting USN and pwd from text file
     a=open("credentials.txt","r")
     credentials_list=a.readlines()
