@@ -29,7 +29,7 @@ def validator(all_text,username):
         return False
     else:
         print("Unknown response from portal")
-        # Print more content for debugging
+       
         print(f"Full page content: {all_text}")
         return False
 
@@ -65,7 +65,7 @@ def sign_in_to_signout_ver2(page, username, password, browser):
     def check_for_input():
         """Check if user input is available without blocking"""
         try:
-            # Check if there's input ready (non-blocking)
+            # Check if there's input ready (non-blocking)-->stackoverflow idea
             if select.select([sys.stdin], [], [], 0)[0]:
                 user_input = sys.stdin.readline().strip().upper()
                 return user_input == "LO"
@@ -77,13 +77,13 @@ def sign_in_to_signout_ver2(page, username, password, browser):
         refresh_count += 1
         print(f"\n--- Refresh #{refresh_count} at {time.strftime('%H:%M:%S')} ---")
 
-        # Check for user input before starting the refresh
+        # Check for user input
         if check_for_input():
             print("Logout requested!")
             user_wants_to_stop = True
             break
 
-        # Perform the refresh operation
+        # Performing refresh operation
         try:
             page.click("#loginbutton")
             page.wait_for_timeout(3000)
@@ -102,9 +102,9 @@ def sign_in_to_signout_ver2(page, username, password, browser):
             print(f"Exception occurred: {e}")
             break
 
-        # Wait period with periodic input checks
+        # Wait period 
         print("Waiting... (type 'LO' to logout)")
-        wait_time = 600  # Change to 600 for 10 minutes lesser for testing purpose
+        wait_time = 600  
         check_interval = 1  # Check every second
 
         for i in range(wait_time):
@@ -114,7 +114,7 @@ def sign_in_to_signout_ver2(page, username, password, browser):
                 break
             time.sleep(check_interval)
 
-    # Logout sequence
+    # logout sequence
     if user_wants_to_stop:
         print("Logging out...")
         try:
@@ -126,7 +126,7 @@ def sign_in_to_signout_ver2(page, username, password, browser):
             browser.close()
 
 
-# Your main code
+# control flow
 x = read()
 username = x[0].strip()
 password = enc_dec.decrypt(x[1].strip())
