@@ -2,7 +2,10 @@
 import os
 import platform
 import stdiomask
+import sys
+
 from enc_dec import decrypt, encrypt
+from clear_stored_data import clear
 platform = platform.system()
 
 def accept_name_password():
@@ -23,6 +26,9 @@ def accept_name_password():
                 a.write(encrypt(pwd) + "\n")
             else:
                 print("The entered passwords do not match.")
+                print("All Data will be cleared")
+                clear()
+                sys.exit(0)
 
 
 

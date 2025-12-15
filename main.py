@@ -6,6 +6,7 @@ import enc_dec
 import time
 import platform
 import stdiomask
+import sys
 
 print("===Enter 1 proceed to Login/Signup :: Enter 2 to change Password")
 change_pwd=int(input())
@@ -15,7 +16,8 @@ if change_pwd==1:
 elif change_pwd==2:
     credentials.change_password()
 else:
-    credentials.accept_name_password()
+    print("Terminating")
+    sys.exit(0)
 if platform.system()=="Darwin":
     print("Looks Like You are on a MAC ")
     print("Soon You would see a pop up which comes when we connect to WIFI")
@@ -34,6 +36,7 @@ elif platform.system()=="Linux":
     connect_to_wifi.connecting_wifi()
 else:
     print("The OS used is not Known :(")
+    sys.exit(0)
 time.sleep(3)#stabelise post connecting to wifi
 import login
 print("Enter 1 -To quit execution :: 2 -Signout")
